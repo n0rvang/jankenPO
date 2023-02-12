@@ -77,6 +77,7 @@ function playRound(playerSelection, computerSelection) {
             
         }
     }
+
     return "Error. Something went wrong";
 
 }
@@ -91,6 +92,11 @@ function game(playerSelection) {
     document.getElementById("result").innerText = result;
     document.getElementById("myScore").innerText = myScore;
     document.getElementById("computerScore").innerText = computerScore;
+    if(myScore === 3) {
+        alert("You win")
+    } else if (computerScore === 3) {
+        alert("Computer Wins")
+    }
 }
 
 function resetGame(){
@@ -100,6 +106,7 @@ function resetGame(){
         document.getElementById("myScore").innerText = 0;
         document.getElementById("computerScore").innerText = 0;
         document.getElementById("result").innerText = "The game has been reset!";
-        
     }
+
+
 }
