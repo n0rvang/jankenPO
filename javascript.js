@@ -94,14 +94,12 @@ function game(playerSelection) {
 }
 
 function resetGame(){
-    console.log("before restet myScore: ", myScore)
-    console.log("before restet computerScore: ", computerScore)
     if (myScore !== 0 || computerScore !== 0) {
         myScore = 0;
         computerScore = 0;
-        document.getElementById("myScore").innerText = myScore; // the element with ID "myScore" 
-        document.getElementById("computerScore").innerText = computerScore;
+        document.getElementById("myScore").innerText = 0;
+        document.getElementById("computerScore").innerText = 0;
+        document.getElementById("result").innerText = "The game has been reset";
+        
     }
-    console.log("after restet myScore: ", myScore)
-    console.log("after restet computerScore: ", computerScore)
 }
