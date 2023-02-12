@@ -8,69 +8,100 @@ function getComputerChoice() {
     return randomSelection
 }
 
-    const winnerString = "You win!";
-    const loserString = "You a bitch boy!";
-    const drawString = "It's a draw!";
+let myScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
     // rock beats scissors
     // scissors beat paper
     // paper beats rock
-    console.log("playerSelection =", playerSelection)
-    console.log("computerSelection =", computerSelection)
 
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
-    let resultString ="No result";
+    const computerSelectionString =`Computer selection: ${computerSelection}`;
+    const playerSelectionString = `Player selection: ${playerSelection}`;
+    const resultBaseString = computerSelectionString + 
+    "\n" + playerSelectionString;
 
+    
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            return drawString;
+            return resultBaseString + "\nResult: DRAW!"
         }
         if (computerSelection === "paper") {
-            return loserString;
+            computerScore++;
+             return resultBaseString
+              + "\nResult: LOSE!"
+            
         }
         if (computerSelection === "scissors") {
-            return winnerString;
+            myScore++;
+             return resultBaseString
+              + "\nResult: WIN!"
+            
         }
     }
 
     if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            return winnerString;
+            myScore++;
+             return resultBaseString
+              + "\nResult: WIN!"
+            
         }
         if (computerSelection === "paper") {
-            return drawString;
+             return resultBaseString + "\nResult: DRAW!"
+            
         }
         if (computerSelection === "scissors") {
-            return loserString;
+            computerScore++;
+             return resultBaseString + "\nResult: LOSE!"
+            
         }
     }
 
     if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            return loserString;
+            computerScore++;
+             return resultBaseString + "\nResult: LOSE!"
+            
         }
         if (computerSelection === "paper") {
-            return winnerString;
+            myScore++;
+             return resultBaseString
+              + "\nResult: WIN!"
+            
         }
         if (computerSelection === "scissors") {
-            return drawString;
+            return resultBaseString + "\nResult: DRAW!"
+            
         }
     }
-
-    
-
-    return resultString;
+    return "Error. Something went wrong";
 
 }
+
 
 
 
 function game(playerSelection) {
     const computerSelection = getComputerChoice();
     const result = playRound(playerSelection, computerSelection);
-    console.log("RESULT FROM GAME: ", result);
-    
-    
+   // alert(result)
+    document.getElementById("result").innerText = result;
+    document.getElementById("myScore").innerText = myScore;
+    document.getElementById("computerScore").innerText = computerScore;
+}
+
+function resetGame(){
+    console.log("before restet myScore: ", myScore)
+    console.log("before restet computerScore: ", computerScore)
+    if (myScore !== 0 || computerScore !== 0) {
+        myScore = 0;
+        computerScore = 0;
+        document.getElementById("myScore").innerText = myScore; // the element with ID "myScore" 
+        document.getElementById("computerScore").innerText = computerScore;
+    }
+    console.log("after restet myScore: ", myScore)
+    console.log("after restet computerScore: ", computerScore)
 }

@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="javascript.js"></script>
-    
+
 </head>
+
 <body>
+
     <div class="container">
-    <div>
-        <br><button onclick="game('rock')">Rock</button>
-    </div>
+        <div>
+            <p id="myScore">0</p>
+        </div>
 
-    <div>
-        <br><button onclick="game('paper')">Paper</button>
-    </div>
+        <div class="buttons">
+            <div class="myclass">
+                <button onclick="game('rock')">✊ <br>Jan</button>
+            </div>
 
-    <div>
-        <br><button onclick="game('scissors')">Scissors</button>
-    </div>
-    
-</div>
+            <div class="myclass">
+                <button onclick="game('paper')">✋ <br>Ken</button>
+            </div>
 
+            <div class="myclass">
+                <button onclick="game('scissors')">✌ <br>Po</button>
+            </div>
+            <button onclick="resetGame()">Reset</button>
+            <div>
+                <p id="computerScore">0</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <p id="result">nothing here yet</p>
+    </div>
 </body>
+
 </html>
