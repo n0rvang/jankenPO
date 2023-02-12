@@ -9,14 +9,46 @@
 
 .myclass {
     padding: 1rem;
+    margin: 10px;
 }
 
 button {
-    padding: 1rem;
+    padding: 5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 24px;
+
 }
 
 .buttons {
     display: flex;
-
+    
+}
+#myScore {
+    font-size: 34px;
+    position: fixed;
+    bottom: 45%;
+    left: 40%;
 }
 
+#computerScore {
+    font-size: 34px;
+    position: fixed;
+    bottom: 45%;
+    right: 40%;
+    
+    
+}
+
+.resetBtn {
+    display: flex;
+    margin: 10px;
+    padding: 1rem;
+    position: absolute;
+    bottom: 20%;
+    left: 42%;
+}
+
+#result {
+    font-size: 34px;
+}

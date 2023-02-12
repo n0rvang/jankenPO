@@ -99,7 +99,7 @@ function resetGame(){
         computerScore = 0;
         document.getElementById("myScore").innerText = 0;
         document.getElementById("computerScore").innerText = 0;
-        document.getElementById("result").innerText = "The game has been reset";
+        document.getElementById("result").innerText = "The game has been reset!";
         
     }
 }
